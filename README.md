@@ -12,7 +12,7 @@
 
 ## Objetivo
 Vocês foram contratados pela Vinheria Agnello para desenvolver um sistema de monitoramento a ser instalado no ambiente em que os vinhos são armazenados. O dono a Vinheria informou que a qualidade do vinho é influenciada diretamente pelas condições de temperatura, umidade e luminosidade do ambiente.
-Tendo essas informações em mente, postamos os dados na plataforma TAGO.IO.
+Dado que já auxiliamos anteriormente com a questão da luminosidade agora iremos fazer o pacote completo e seguir com a montagem de um sistema arduino que capture todas essas informções e as envie para a plataforma TAGO.IO.
 
 ## Descrição do desafio
 - Precisam medir a temperatura e umidade do ambiente, utilizando um sensor integrado DHT11, precisamos aprender a instalar e utilizar esse sensor no IDE do Arduino para ler a temperatura e umidade do ambiente.
