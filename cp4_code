@@ -7,13 +7,13 @@ char ssid[] = "Galaxy Felipe";
 char pass[] = "Felipe100603";
 char serverAddress[] = "https://api.tago.io/data";  // TagoIO address
 char contentHeader[] = "application/json";
-char tokenHeader[]   = "b6649bfb-bca8-4ee5-8cf6-5b8f021f4621"; // TagoIO Token
+char tokenHeader[]   = "b831c3b5-4c01-4d11-9b8e-383d3123c7da"; // TagoIO Token
 HTTPClient client; // Iniciar uma nova instância do cliente HTTP
 
 
 #define DHTPIN 4 // Pino onde o sensor DHT11 está conectado
 #define DHTTYPE DHT11 // Tipo do sensor DHT (DHT11 no seu caso)
-#define LDR_PIN A0 // Pino onde o LDR está conectado (porta analógica A0)
+#define LDR_PIN 34 // Pino onde o LDR está conectado (porta analógica A0)
 
 DHT dht(DHTPIN, DHTTYPE);
 
