@@ -16,15 +16,4 @@ Dado que já auxiliamos anteriormente com a questão da luminosidade agora iremo
 
 ## Descrição do desafio
 - Precisam medir a temperatura e umidade do ambiente, utilizando um sensor integrado DHT11, precisamos aprender a instalar e utilizar esse sensor no IDE do Arduino para ler a temperatura e umidade do ambiente.
-- Precisamos aprender a utilizar um display de LCD para exibir esses valores e integrar ele com o sistema já criado de funcionalidade para temperatura e umidade além de sinalizar com os LEDs e o Buzzer a luminosidade indicar quando a temperatura e/ou a umidade estiverem em níveis críticos.
 
-## Desenvolvimento do projeto
-   - Enfrentamos alguns desafios durante o desenvolvimento da prioridade de acontecimentos para o arduino retornar de forma responsiva com os leds e o buzzer de acordo com o cenario apresentado.
-
- ### Esquema de montagem ###
- ![Checkpoint II Case Vinheria Grupo 3](https://user-images.githubusercontent.com/84590776/234154228-9e834062-8747-4f8e-8ece-63cafe5e7fc5.png)
-
-
-  ## Pré-requisitos
-  
-![image](https://user-images.githubusercontent.com/84590776/234154078-cbe0ae71-71ef-415d-9127-98cf6cdd8fae.png)
