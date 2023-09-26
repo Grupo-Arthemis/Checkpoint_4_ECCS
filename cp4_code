@@ -1,0 +1,105 @@
+#include "Arduino.h"
+#include "WiFi.h"
+#include "HTTPClient.h"
+#include "DHT.h"
+
+char ssid[] = "Galaxy Felipe";
+char pass[] = "Felipe100603";
+char serverAddress[] = "https://api.tago.io/data";  // TagoIO address
+char contentHeader[] = "application/json";
+char tokenHeader[]   = "b6649bfb-bca8-4ee5-8cf6-5b8f021f4621"; // TagoIO Token
+HTTPClient client; // Iniciar uma nova instância do cliente HTTP
+
+
+#define DHTPIN 4 // Pino onde o sensor DHT11 está conectado
+#define DHTTYPE DHT11 // Tipo do sensor DHT (DHT11 no seu caso)
+#define LDR_PIN A0 // Pino onde o LDR está conectado (porta analógica A0)
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  init_wifi();
+  pinMode(DHTPIN, INPUT);
+  dht.begin(); // Inicializar o sensor DHT11
+
+}
+void init_wifi() {
+  Serial.println("Conectando WiFi");
+  WiFi.begin(ssid, pass);
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(1000);
+  }
+  Serial.println("Conectado");
+  Serial.print("Meu IP eh: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+  char anyData[30];
+  char anyData1[30];
+  char luzData[300];
+  char umidadeData[300];
+  char tempData[300];
+  int statusCode = 0;
+
+  int ldrValue = analogRead(LDR_PIN);
+  float luz = map(ldrValue, 0, 1023, 0, 100); // Mapear o valor do LDR para uma faixa de 0 a 100 (ou outra escala desejada)
+  float umidade = dht.readHumidity(); // Variável de umidade
+  float temperatura = dht.readTemperature(); // Variável de temperatura
+
+  // Formatar e enviar dados de luminosidade
+  strcpy(luzData, "{\n\t\"variable\": \"Luminosidade\",\n\t\"value\": ");
+  dtostrf(luz, 6, 2, anyData);
+  strncat(luzData, anyData, 100);
+  strcpy(anyData1, ",\n\t\"unit\": \"lx\"\n\t}\n");
+  strncat (luzData, anyData1, 100);
+  Serial.println(luzData);
+  client.begin(serverAddress);
+  client.addHeader("Content-Type", contentHeader);
+  client.addHeader("Device-Token", tokenHeader);
+  statusCode = client.POST(luzData);
+  delay (2000);
+  Serial.print("Status code (Luminosidade): ");
+  Serial.println(statusCode);
+  Serial.println("End of POST to TagoIO");
+  Serial.println();
+
+  // Formatar e enviar dados de temperatura
+  strcpy(tempData, "{\n\t\"variable\": \"Temperatura\",\n\t\"value\": ");
+  dtostrf(temperatura, 6, 2, anyData);
+  strncat(tempData, anyData, 100);
+  strcpy(anyData1, ",\n\t\"unit\": \"C\"\n\t}\n");
+  strncat (tempData, anyData1, 100);
+  Serial.println(tempData);
+  client.begin(serverAddress);
+  client.addHeader("Content-Type", contentHeader);
+  client.addHeader("Device-Token", tokenHeader);
+  statusCode = client.POST(tempData);
+  delay (2000);
+  Serial.print("Status code (Temperatura): ");
+  Serial.println(statusCode);
+  Serial.println("End of POST to TagoIO");
+  Serial.println();
+  delay(5000);
+
+  // Formatar e enviar dados de umidade
+  strcpy(umidadeData, "{\n\t\"variable\": \"Umidade\",\n\t\"value\": ");
+  dtostrf(umidade, 6, 2, anyData);
+  strncat(umidadeData, anyData, 100);
+  strcpy(anyData1, ",\n\t\"unit\": \"%\"\n\t}\n");
+  strncat(umidadeData, anyData1, 100);
+  Serial.println(umidadeData);
+  client.begin(serverAddress);
+  client.addHeader("Content-Type", contentHeader);
+  client.addHeader("Device-Token", tokenHeader);
+  statusCode = client.POST(umidadeData);
+   Serial.print("Status code (Umidade): ");
+  Serial.println(statusCode);
+  Serial.println("End of POST to TagoIO");
+
+  // Delay para enviar os dados periodicamente
+  delay(5000);
+}
