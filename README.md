@@ -1,4 +1,4 @@
-# Checkpoint-2-Edge-Computing-and-Computer-Systems
+# Checkpoint 4 ECCS
 **Nome dos integrantes do grupo:** </br>
 *Julia Azevedo Lins RM98690* </br>
 *Luis Gustavo Barreto Garrido RM99210* </br>
@@ -16,10 +16,6 @@ Dado que já auxiliamos anteriormente com a questão da luminosidade agora iremo
 
 ## Descrição do desafio
 - Precisam medir a temperatura e umidade do ambiente, utilizando um sensor integrado DHT11, precisamos aprender a instalar e utilizar esse sensor no IDE do Arduino para ler a temperatura e umidade do ambiente.
-- Precisamos aprender a utilizar um display de LCD para exibir esses valores e integrar ele com o sistema já criado de funcionalidade para temperatura e umidade além de sinalizar com os LEDs e o Buzzer a luminosidade indicar quando a temperatura e/ou a umidade estiverem em níveis críticos.
-
-## Desenvolvimento do projeto
-   - Enfrentamos alguns desafios durante o desenvolvimento da prioridade de acontecimentos para o arduino retornar de forma responsiva com os leds e o buzzer de acordo com o cenario apresentado.
 
 ## Integração com o Tago
 
@@ -35,10 +31,6 @@ Personalizamos o layout do dashboard de acordo com as necessidades e preferênci
 
 Essa integração com o Tago foi crucial para transformar os dados brutos coletados pelo Arduino em informações úteis e acessíveis, possibilitando uma gestão eficiente das condições ambientais da Vinheria Agnello.
 
- ### Esquema de montagem ###
- ![Checkpoint II Case Vinheria Grupo 3](https://user-images.githubusercontent.com/84590776/234154228-9e834062-8747-4f8e-8ece-63cafe5e7fc5.png)
+![image](https://github.com/Grupo-Arthemis/Checkpoint_4_ECCS/assets/126623977/19d262e6-432d-4672-8711-7d1116ff201c)
 
-
-  ## Pré-requisitos
-  
-![image](https://user-images.githubusercontent.com/84590776/234154078-cbe0ae71-71ef-415d-9127-98cf6cdd8fae.png)
+![1000067985](https://github.com/Grupo-Arthemis/Checkpoint_4_ECCS/assets/126623977/13506b86-0e5b-4d4e-8375-c4e820db20c2)
