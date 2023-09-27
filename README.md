@@ -24,12 +24,12 @@ Dado que já auxiliamos anteriormente com a questão da luminosidade agora iremo
 ## Integração com o Tago
 
 Durante a execução deste projeto, realizamos a integração dos dados coletados pelo Arduino com a plataforma Tago. Essa integração foi essencial para armazenar e visualizar as informações de temperatura, umidade e luminosidade de forma organizada e acessível.
-Configuramos um novo dispositivo para representar o Arduino. Nesse dispositivo, definimos três variáveis fundamentais para os nossos dados: temperature, humidity e luminosity. Essas variáveis representam os valores que o Arduino envia para o Tago.
+Configuramos um novo dispositivo para representar o Arduino. Nesse dispositivo, definimos três variáveis fundamentais para os nossos dados: temperatura, umidade e luminosidade. Essas variáveis representam os valores que o Arduino envia para o Tago.
 
 Para estabelecer a comunicação entre o Arduino e o Tago, adaptamos o código do Arduino para enviar os dados simulados através da comunicação serial. Assim, os dados são "enviados" para o Tago, representando o processo real de transmissão das informações.
 
 ## Visualização no Dashboard
-Com os dados chegando ao Tago, criamos um dashboard na plataforma para visualizar e acompanhar em tempo real as condições do ambiente de armazenamento dos vinhos. No dashboard, adicionamos widgets para representar as variáveis temperature, humidity e luminosity.
+Com os dados chegando ao Tago, criamos um dashboard na plataforma para visualizar e acompanhar em tempo real as condições do ambiente de armazenamento dos vinhos. No dashboard, adicionamos widgets para representar as variáveis temperatura, umidade e luminosidade.
 
 Personalizamos o layout do dashboard de acordo com as necessidades e preferências, utilizando gráficos e indicadores para fornecer uma representação visual clara e intuitiva das informações coletadas. Isso nos permitiu monitorar o ambiente de armazenamento de forma eficaz, garantindo que as condições ideais para a preservação dos vinhos estivessem sempre sob controle.
 
